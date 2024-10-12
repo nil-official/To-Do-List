@@ -3,9 +3,9 @@ import { PencilIcon, TrashIcon, CheckCircleIcon, SaveIcon } from '@heroicons/rea
 import { format } from 'date-fns';
 
 const Task = ({ task, tasks, setTasks }) => {
-    const [isEditing, setIsEditing] = useState(false); // Track edit mode
-    const [editedTitle, setEditedTitle] = useState(task.title); // Temporary state for edited title
-    const [editedDate, setEditedDate] = useState(task.date); // Temporary state for edited date
+    const [isEditing, setIsEditing] = useState(false);
+    const [editedTitle, setEditedTitle] = useState(task.title);
+    const [editedDate, setEditedDate] = useState(task.date);
 
     const toggleCompletion = () => {
         const updatedTasks = tasks.map((t) =>
@@ -24,26 +24,23 @@ const Task = ({ task, tasks, setTasks }) => {
             t.id === task.id ? { ...t, title: editedTitle, date: editedDate } : t
         );
         setTasks(updatedTasks);
-        setIsEditing(false); // Exit edit mode
+        setIsEditing(false);
     };
 
-    // Format the date using date-fns
     const formattedDate = format(new Date(task.date), 'MMMM dd, yyyy, hh:mm a');
 
     return (
         <div
-            className={`flex justify-between items-center p-4 mb-4 rounded-lg shadow-lg transition-all duration-300 ${task.completed ? 'bg-gray-200 opacity-70' : 'bg-white'
+            className={`flex flex-col sm:flex-row justify-between items-start sm:items-center p-4 mb-4 rounded-lg shadow-lg transition-all duration-300 ${task.completed ? 'bg-gray-200 opacity-70' : 'bg-white'
                 }`}
         >
-            <div className="flex items-center space-x-4">
-                {/* Toggle completion button */}
+            <div className="flex items-start sm:items-center space-x-4 w-full sm:w-auto">
                 <CheckCircleIcon
                     className={`h-6 w-6 cursor-pointer ${task.completed ? 'text-green-500' : 'text-gray-400'
                         }`}
                     onClick={toggleCompletion}
                 />
 
-                {/* Task Info (Editable fields when in editing mode) */}
                 {isEditing ? (
                     <div className="flex flex-col space-y-2">
                         <input
@@ -67,8 +64,7 @@ const Task = ({ task, tasks, setTasks }) => {
                 )}
             </div>
 
-            {/* Edit, Save, and Delete buttons */}
-            <div className="flex space-x-2">
+            <div className="flex space-x-2 mt-4 sm:mt-0">
                 {isEditing ? (
                     <SaveIcon
                         className="h-6 w-6 cursor-pointer text-green-500"
