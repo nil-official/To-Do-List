@@ -31,8 +31,14 @@ const Todo = () => {
     };
 
     return (
-        <div className="min-h-screen bg-gray-100 p-6 flex flex-col items-center">
+        <div className="min-h-screen flex flex-col items-center p-6 bg-gradient-to-br from-blue-100 via-indigo-100 to-purple-200 relative overflow-hidden">
             <h1 className="text-3xl font-bold mb-6 text-gray-800 text-center">My To-Do List</h1>
+
+            {/* Background Decorative Elements */}
+            <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
+                <div className="absolute w-96 h-96 bg-gradient-to-r from-purple-300 to-indigo-400 rounded-full mix-blend-multiply filter blur-3xl opacity-30 top-10 left-20"></div>
+                <div className="absolute w-72 h-72 bg-gradient-to-r from-blue-400 to-purple-500 rounded-full mix-blend-multiply filter blur-3xl opacity-40 bottom-10 right-10"></div>
+            </div>
 
             {/* Task Input Section */}
             <div className="w-full max-w-md bg-white shadow-lg rounded-lg p-6 mb-6">

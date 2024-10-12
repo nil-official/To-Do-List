@@ -31,7 +31,7 @@ const Task = ({ task, tasks, setTasks }) => {
 
     return (
         <div
-            className={`flex flex-col sm:flex-row justify-between items-start sm:items-center p-4 mb-4 rounded-lg shadow-lg transition-all duration-300 ${task.completed ? 'bg-gray-200 opacity-70' : 'bg-white'
+            className={`flex flex-col sm:flex-row justify-between items-start sm:items-center p-4 mb-4 rounded-lg shadow-lg transition-all duration-300 transform hover:scale-105 ${task.completed ? 'bg-gray-200 opacity-70' : 'bg-white'
                 }`}
         >
             <div className="flex items-start sm:items-center space-x-4 w-full sm:w-auto">
