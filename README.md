@@ -21,6 +21,10 @@ This **Todo List Web Application** is a simple, user-friendly task management to
 - **Styling**: Tailwind CSS
 - **Date Formatting**: `date-fns` for formatting task dates and times
 
+## Live Demo
+
+Check out the live demo of the application here: [To Do Web App](https://nil-official.github.io/SCT_WD_4/)
+
 ## Installation
 
 To set up and run the Todo List application locally, follow these steps:
